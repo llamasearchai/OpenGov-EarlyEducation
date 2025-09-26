@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - LOG_LEVEL=INFO
+      - DATABASE_PATH=/app/data/open_early_education.db
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+      - ./.open_early_education_assistant.json:/app/.open_early_education_assistant.json
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import requests; requests.get('http://localhost:8000/health')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # Optional: PostgreSQL database (if you want to upgrade from SQLite later)
+  # db:
+  #   image: postgres:15
+  #   environment:
+  #     - POSTGRES_DB=openearlyeducation
+  #     - POSTGRES_USER=app
+  #     - POSTGRES_PASSWORD=change_me_in_production
+  #   volumes:
+  #     - postgres_data:/var/lib/postgresql/data
+  #   ports:
+  #     - "5432:5432"
+
+  # Optional: Redis for caching
+  # redis:
+  #   image: redis:7-alpine
+  #   ports:
+  #     - "6379:6379"
+  #   volumes:
+  #     - redis_data:/data
+
+# volumes:
+#   postgres_data:
+#   redis_data:
