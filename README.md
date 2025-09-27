@@ -1,5 +1,7 @@
 # OpenEarlyEducation
 
+<img src="OpenGov-EarlyEducation.png" alt="OpenEarlyEducation" width="360" />
+
 A complete, research-backed early childhood lesson planning and weekly scheduling system that uses AI to generate developmentally appropriate empathy and collaboration-centered curriculum plans.
 
 ![OpenEarlyEducation](https://img.shields.io/badge/OpenEarlyEducation-v2.0.0-blue)
