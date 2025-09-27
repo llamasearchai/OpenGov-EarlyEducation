@@ -622,7 +622,7 @@ class TUIApp:
         self.console.clear()
         self.console.print(Panel("Application Settings", border_style="blue", box=box.ROUNDED))
 
-        self.console.print("[yellow]Settings management coming soon![/yellow]")
+        self.console.print("[yellow]Settings management will be available in a future update.[/yellow]")
         self.console.print("\nPress Enter to continue...")
         input()
 
