@@ -1,0 +1,38 @@
+# OpenEarlyEducation Requirements
+# Install with: pip install -r requirements.txt
+
+# Core dependencies
+openai>=1.0.0
+pydantic>=2.0.0
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+
+# Database (sqlite3 is built-in with Python; no pip package needed)
+
+# Terminal UI
+rich>=13.7.0
+
+# Data processing and templates
+python-dateutil>=2.8.0
+jinja2>=3.1.0
+pyyaml>=6.0.0
+
+# PDF generation (optional)
+reportlab>=4.0.0
+
+# Development and testing
+pytest>=7.4.0
+pytest-cov>=4.1.0
+pytest-mock>=3.12.0
+
+# Type checking
+mypy>=1.7.0
+
+# Code formatting and linting
+black>=23.11.0
+flake8>=6.1.0
+isort>=5.12.0
+
+# Documentation
+mkdocs>=1.5.0
+mkdocs-material>=9.4.0
